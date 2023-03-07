@@ -1,9 +1,9 @@
-import br.com.dio.desafio.domain.Conteudo;
+import br.com.dio.desafio.domain.Bootcamp;
 import br.com.dio.desafio.domain.Curso;
+import br.com.dio.desafio.domain.Dev;
 import br.com.dio.desafio.domain.Mentoria;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Main {
 
@@ -13,10 +13,11 @@ public class Main {
         curso.setDescricao("Descrição do curso");
         curso.setCargaHoraria(10);
 
+
         Curso curso2 = new Curso();
-        curso.setTitulo("Curso Js");
-        curso.setDescricao("Descrição do curso");
-        curso.setCargaHoraria(4);
+        curso2.setTitulo("Curso Js");
+        curso2.setDescricao("Descrição do curso");
+        curso2.setCargaHoraria(4);
 
         Mentoria mentoria = new Mentoria();
         mentoria.setTitulo("Mentoria Java");
@@ -25,7 +26,26 @@ public class Main {
         mentoria.setData(LocalDate.now());
 
 
-        System.out.println(curso);
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao("Descrição do Bootcamp Java Developer");
+        bootcamp.getConteudos().add(curso);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev dev = new Dev();
+        dev.setNome("JOAO");
+        dev.inscreverBootcamp(bootcamp);
+        dev.progredir();
+        System.out.println(dev.getConteudosInscritos());
+        System.out.println(dev.getConteudosConcluidos());
+
+        Dev dev2 = new Dev();
+        dev2.setNome("MARIA");
+        dev2.inscreverBootcamp(bootcamp);
+        System.out.println(dev2.getConteudosInscritos());
+
+
 
     }
 
