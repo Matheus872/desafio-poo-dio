@@ -1,3 +1,4 @@
+import br.com.dio.desafio.domain.Conteudo;
 import br.com.dio.desafio.domain.Curso;
 import br.com.dio.desafio.domain.Mentoria;
 
@@ -22,6 +23,7 @@ public class Main {
         mentoria.setDescricao("Descrição da Mentoria");
         mentoria.setCargaHoraria(2);
         mentoria.setData(LocalDate.now());
+
 
         System.out.println(curso);
 
